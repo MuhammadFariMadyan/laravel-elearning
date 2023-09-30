@@ -26,8 +26,13 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="box box-danger">
-                <div class="box-header with-border">                  
-                  <h3 class="box-title">Tambah Soal Ujian <a href="{{{ URL::to('admin/tambah_soal_ujian') }}}" class="btn btn-success btn-flat btn-sm" id="tambahSoalUjian" title="Tambah Soal Ujian"><i class="fa fa-plus"></i></a></h3>                  
+                <div class="box-header with-border">
+                  <?php if (Auth::user()->level  == 11): ?>
+                    <h3 class="box-title">Tambah Soal Ujian <a href="{{{ URL::to('admin/tambah_soal_ujian') }}}" class="btn btn-success btn-flat btn-sm" id="tambahSoalUjian" title="Tambah Soal Ujian"><i class="fa fa-plus"></i></a></h3>                  
+                  <?php endif ?>
+                  <?php if (Auth::user()->level  == 12): ?>
+                    <h3 class="box-title">Tambah Soal Ujian <a href="{{{ URL::to('guru/tambah_soal_ujian') }}}" class="btn btn-success btn-flat btn-sm" id="tambahSoalUjian" title="Tambah Soal Ujian"><i class="fa fa-plus"></i></a></h3>                  
+                  <?php endif ?>
                 </div><!-- /.box-header -->
                 
                 <div class="box-body">                  
